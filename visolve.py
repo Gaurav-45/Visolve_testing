@@ -7,11 +7,6 @@ class HomePage:
 
     URL = 'http://127.0.0.1:3000/'
 
-   # element search queries
-    USER_NAME = (By.NAME, 'email')
-    PASS = (By.NAME, 'password')
-    LOGIN = (By.CLASS_NAME, 'button')
-
     def __init__(self, browser):
         self.browser = browser
 

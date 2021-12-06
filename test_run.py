@@ -7,7 +7,7 @@ import pytest
 def test_upload(browser):
     b = HomePage(browser)
     b.load()
-    b.uploadFile("C:\\Users\\gaura\\Downloads\\661.png")
+    b.uploadFile("")
     assert 3 == 3
 
 
