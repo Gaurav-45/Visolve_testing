@@ -18,68 +18,57 @@ class HomePage:
 
 # functions used in testing
 
-
     def load(self):
         self.browser.get(self.URL)
 
-    def uploadFile(self):
+    def uploadFile(self, picture):
         uploadButton = self.browser.find_element(By.ID, "file")
-        uploadButton.send_keys(
-            "C:\\Users\\gaura\\Downloads\\maxresdefault.jpg")
+        uploadButton.send_keys(picture)
 
+        submitButton = self.browser.find_element(By.ID, "submit")
+        submitButton.click()
+        time.sleep(20)
+
+    def solveEquation(self, picture):
+        uploadButton = self.browser.find_element(By.ID, "file")
+        uploadButton.send_keys(picture)
+
+        submitButton = self.browser.find_element(By.ID, "submit")
+        submitButton.click()
+
+        time.sleep(10)
         solveButton = self.browser.find_element(By.ID, "solve")
         solveButton.click()
+        time.sleep(10)
 
-        time.sleep(30)
+    def solveandVis(self, picture):
+        uploadButton = self.browser.find_element(By.ID, "file")
+        uploadButton.send_keys(picture)
 
-    # def sign_out(self):
-    #     singout = self.browser.find_element(By.CLASS_NAME, "dropdown")
-    #     singout.click()
-    #     btn = self.browser.find_element(By.CLASS_NAME, "visible")
-    #     inn = btn.find_element(By.TAG_NAME, "span")
-    #     inn.click()
+        submitButton = self.browser.find_element(By.ID, "submit")
+        submitButton.click()
 
-    # def login_(self, user, pswrd):
-    #     username = self.browser.find_element(*self.USER_NAME)
-    #     password = self.browser.find_element(*self.PASS)
-    #     username.send_keys(user)
-    #     password.send_keys(pswrd)
-    #     login = self.browser.find_element(*self.LOGIN)
-    #     login.click()
-    #     time.sleep(3)
-    #     msg = self.browser.find_element(By.CLASS_NAME, "error")
-    #     return msg.text
+        time.sleep(10)
+        solveButton = self.browser.find_element(By.ID, "solve")
+        solveButton.click()
+        time.sleep(10)
 
-    # def login(self, user, pswrd):
-    #     username = self.browser.find_element(*self.USER_NAME)
-    #     password = self.browser.find_element(*self.PASS)
-    #     username.send_keys(user)
-    #     password.send_keys(pswrd)
-    #     login = self.browser.find_element(*self.LOGIN)
-    #     login.click()
-    #     time.sleep(3)
-    #     avatar = self.browser.find_element(By.TAG_NAME, "span")
-    #     return avatar.text
+        visButton = self.browser.find_element(By.ID, "vis")
+        visButton.click()
+        time.sleep(10)
 
-    # def add_subspace(self, test):
-    #     add = self.browser.find_element(By.CLASS_NAME, "add-s")
-    #     add.click()
-    #     time.sleep(2)
-    #     name = self.browser.find_element(By.NAME, "name")
-    #     save = self.browser.find_element(By.CLASS_NAME, "checkmark")
-    #     name.send_keys(test)
-    #     save.click()
-    #     spaces = self.browser.find_elements(By.ID, "style2")
-    #     check = spaces[-1].text
-    #     return check
+    def visualize(self, picture):
+        uploadButton = self.browser.find_element(By.ID, "file")
+        uploadButton.send_keys(picture)
 
-    # def send_message(self, msgg):
-    #     msg = self.browser.find_element(By.NAME, "message")
-    #     msg.send_keys(msgg)
-    #     send = self.browser.find_element(By.CLASS_NAME, "send")
-    #     send.click()
+        submitButton = self.browser.find_element(By.ID, "submit")
+        submitButton.click()
 
-    # def get_latest_msg(self):
-    #     msgs = self.browser.find_elements(By.CLASS_NAME, "content")
-    #     msg_text = msgs[-1].find_element(By.CLASS_NAME, "text")
-    #     return msg_text.text
+        time.sleep(10)
+        solveButton = self.browser.find_element(By.ID, "graph")
+        solveButton.click()
+        time.sleep(10)
+
+        homeButton = self.browser.find_element(By.ID, "home")
+        homeButton.click()
+        time.sleep(5)
